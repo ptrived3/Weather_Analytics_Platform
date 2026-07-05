@@ -41,7 +41,7 @@ def profile(df, label):
     
     print("\nNULL per column: ", df.isnull().sum())
 
-    print("/nSummary: ", df.describe())
+    print("\nSummary: ", df.describe())
 
     duplicates = df.duplicated(subset=["city_name", "time"]).sum()
     print("\nDuplicate rows (city, date):", duplicates)

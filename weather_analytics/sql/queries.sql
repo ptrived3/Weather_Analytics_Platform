@@ -62,3 +62,10 @@ FROM weather_analytics.weather w
 JOIN weather_analytics.cities c ON c.city_id = w.city_id
 GROUP BY c.city_name
 ORDER BY daylight DESC;
+
+
+
+-- QUERY 8: Get all the forecast for the next 7 days
+SELECT c.city_name, f.max_temp, f.min_temp, f.sunrise, f.sunset
+FROM weather_analytics.forecast f
+JOIN weather_analytics.cities c on c.city_id = f.city_id;

@@ -48,7 +48,7 @@ GROUP BY c.city_name
 ORDER BY rainfall_inches;
 
 
--- QUERY 6: Frequency of extreme temperature days per city (temp > 100)
+-- QUERY 6: Frequency of extreme temperature days per city (temp > 90)
 SELECT c.city_name, COUNT(*) FILTER (WHERE w.max_temp > 90) AS extreme_heat_days, COUNT(*) FILTER (WHERE w.min_temp < 24) AS extreme_freeze_days
 FROM weather_analytics.weather w
 JOIN weather_analytics.cities c ON c.city_id = w.city_id
